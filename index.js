@@ -36,22 +36,39 @@ function playRound(playerSelection, computerSelection) {
         return("You Lose! Rock beats scissors.");
     }
 }
+function gameOver(player,cpu){
+    return(player==5 || cpu==5);
+}
+function isWinner(player, cpu){
+    if(player > cpu){
+        return (console.log("You won the game! Player: " + player + " CPU: " + cpu));
+    }
+    else
+        return (console.log("You lost the game! Player: " + player + " CPU: " + cpu));
+}
+
+
 
 function game(){
+
     let playerScore =0;
     let computerScore = 0;
     let userPrompt = '';
     
    /* for(let i=0; i<5; i++){
         userPrompt = prompt("Rock, Paper, or Scissors?");
+
         
-        if(playRound(userPrompt,getComputerChoice().includes("Lose"))){
+        if(playRound(userPrompt,getComputerChoice()).includes("Lose")){
             computerScore++;
             console.log("The computer won this round. \n Player: " + playerScore + "  CPU: " + computerScore);
-        }else if(playRound(userPrompt,getComputerChoice().includes("Win"))){
+        }else if(playRound(userPrompt,getComputerChoice()).includes("Win")){
             playerScore++;
             console.log("You won this round! \n Player: " + playerScore + "  CPU: " + computerScore);
+        }else if(playRound(userPrompt,getComputerChoice()).includes("tie")){
+            console.log("It's a tie this round! \n Player: " + playerScore + "  CPU: " + computerScore);
         }
+
 
     }
 */
@@ -59,11 +76,11 @@ function game(){
     
     if(playerScore == computerScore){
 
-    } else if(playerScore<computerScore){
-        console.log("aww cpu won with a score of " + computerScore + " and you with " +  playerScore);
-    }else if(computerScore < playerScore){
-        console.log("Nice you won with a score of " + playerScore + " and the cpu with " + computerScore);
+
     }
+
+    isWinner(playerScore, computerScore);
+    
 }
 
 game();
