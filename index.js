@@ -1,6 +1,12 @@
 const CHOICES = ['rock', 'paper', 'scissors'];
 //const playerSelection = "rock";
 const computerSelection = getComputerChoice();
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+rockBtn.addEventListener('click', () => {
+    alert("your pressed rock");
+});
 
 function getComputerChoice(){
     return CHOICES[Math.floor(Math.random()*3)] 
@@ -36,7 +42,7 @@ function game(){
     let computerScore = 0;
     let userPrompt = '';
     
-    for(let i=0; i<5; i++){
+   /* for(let i=0; i<5; i++){
         userPrompt = prompt("Rock, Paper, or Scissors?");
         
         if(playRound(userPrompt,getComputerChoice().includes("Lose"))){
@@ -48,6 +54,9 @@ function game(){
         }
 
     }
+*/
+
+    
     if(playerScore == computerScore){
 
     } else if(playerScore<computerScore){
@@ -56,4 +65,6 @@ function game(){
         console.log("Nice you won with a score of " + playerScore + " and the cpu with " + computerScore);
     }
 }
+
+game();
 //console.log(playRound(playerSelection, computerSelection));
