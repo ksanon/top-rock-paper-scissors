@@ -66,7 +66,7 @@ function game(){
             playerScore++;
             console.log("You won this round! \n Player: " + playerScore + "  CPU: " + computerScore);
         }else if(playRound(userPrompt,getComputerChoice()).includes("tie")){
-            console.log("It's a tie this round! \n Player: " + playerScore + "  CPU: " + computerScore);
+            console.log("It's a tie this round! \n Player: " + playerScore + " CPU: " + computerScore);
         }
 
 
